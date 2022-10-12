@@ -31,6 +31,7 @@
         :formItems="formItems"
         :rules="rules"
         :submitLoading="submitLoading"
+        :formAttr="{ inline: true }"
         @resetForm="resetForm"
         @search="search"
       >
