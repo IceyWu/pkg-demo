@@ -4,12 +4,16 @@
       v-model="isDark"
       inline-prompt
       size="large"
+      :active-icon="dayIcon"
+      :inactive-icon="darkIcon"
       @change="dataThemeChange"
     />
     <el-switch
       v-model="language"
       inline-prompt
       size="large"
+      :active-icon="chineseIcon"
+      :inactive-icon="englishIcon"
       @change="locale = language ? 'zh' : 'en'"
     />
 
@@ -47,7 +51,7 @@
       <ElpForm
         :formItems="addUserForm"
         :rules="rules"
-        :submitLoading="submitLoading"
+        :submitLoading="addUserLoading"
         @resetForm="resetForm"
         @search="search"
       >
@@ -62,10 +66,10 @@ import { ElDivider } from 'element-plus'
 import type { FormRules } from 'element-plus'
 import { h, ref, reactive, onMounted } from 'vue'
 import { ElpForm } from 'elp-form'
-// import dayIcon from "./../../svg/day.svg";
-// import darkIcon from "./../../svg/dark.svg";
-// import chineseIcon from "./../../svg/chinese.svg";
-// import englishIcon from "./../../svg/english.svg";
+import dayIcon from '/@/svg/day.svg'
+import darkIcon from '/@/svg/dark.svg'
+import chineseIcon from '/@/svg/chinese.svg'
+import englishIcon from '/@/svg/english.svg'
 const dialogVisible = ref(false)
 let loading = ref(true)
 let isDark = ref(false)
@@ -77,10 +81,13 @@ const spacer = h(ElDivider, { direction: 'vertical' })
 const tableRef = ref()
 
 function getTableMethods() {
-  console.log('methods', tableRef.value.getTableRef())
+  // console.log('methods', tableRef.value.getTableRef())
+  // 打开链接https://github.com/IceyWu/elp-form/blob/main/src/App.vue
+  window.location.href =
+    'https://github.com/IceyWu/elp-form/blob/main/src/App.vue'
 }
 
-function dataThemeChange(val:any) {
+function dataThemeChange(val: any) {
   isDark.value = val
   if (val) {
     document.documentElement.classList.add('dark')
@@ -89,6 +96,7 @@ function dataThemeChange(val:any) {
   }
 }
 const submitLoading = ref(false)
+const addUserLoading = ref(false)
 const resetForm = () => {
   console.log('resetForm')
 }
@@ -219,7 +227,7 @@ const addUserForm = [
   {
     label: t('text.password'),
     type: 'input',
-    value: 'password',
+    value: 'password1',
     defaultValue: '',
 
     attribute: {
