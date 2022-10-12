@@ -11,16 +11,22 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: defineAsyncComponent(
-        () => import(`../views/home/index.vue`)
-      ),
+      // component: defineAsyncComponent(
+      //   () => import(`../views/home/index.vue`)
+      // ),
+      // component: defineAsyncComponent(
+      //   () => import(`../views/ElpForm/index.vue`)
+      // ),
+      component: () => import(`../views/ElpForm/index.vue`),
     },
     {
       path: '/ElpForm',
       name: 'ElpForm',
-      component: defineAsyncComponent(() => import(`../views/ElpForm/index.vue`)),
+      // component: defineAsyncComponent(
+      //   () => import(`../views/ElpForm/index.vue`)
+      // ),
+      component: () => import(`../views/ElpForm/index.vue`),
     },
-    
   ],
 })
 // 全局路由守卫

@@ -5,6 +5,7 @@ import VueI18n from "@intlify/vite-plugin-vue-i18n";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base:'./',
   plugins: [
     vue(),
     VueI18n({

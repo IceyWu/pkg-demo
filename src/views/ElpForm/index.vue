@@ -31,7 +31,6 @@
         :formItems="formItems"
         :rules="rules"
         :submitLoading="submitLoading"
-        :formAttr="{ inline: true }"
         @resetForm="resetForm"
         @search="search"
       >
@@ -80,7 +79,7 @@ function getTableMethods() {
   console.log('methods', tableRef.value.getTableRef())
 }
 
-function dataThemeChange(val) {
+function dataThemeChange(val:any) {
   isDark.value = val
   if (val) {
     document.documentElement.classList.add('dark')
