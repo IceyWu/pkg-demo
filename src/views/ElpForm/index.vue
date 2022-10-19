@@ -189,7 +189,7 @@ const formItems = reactive([
 ])
 const addUserForm = [
   {
-    label: t('text.username'),
+    label: '开关',
     type: 'switch',
     value: 'switch',
     defaultValue: false,
@@ -232,6 +232,32 @@ const addUserForm = [
 
     attribute: {
       placeholder: t('placeholder.password'),
+      maxlength: 20,
+      clearable: true,
+    },
+    rowIndex: 1,
+  },
+  {
+    label: '数字输入框',
+    type: 'inputNumber',
+    value: 'inputNumber',
+    defaultValue: 1,
+
+    attribute: {
+      // placeholder: t('placeholder.password'),
+      maxlength: 20,
+      clearable: true,
+    },
+    rowIndex: 1,
+  },
+  {
+    label: '单选框',
+    type: 'radio',
+    value: 'radio',
+    // defaultValue: '',
+
+    attribute: {
+      // placeholder: t('placeholder.password'),
       maxlength: 20,
       clearable: true,
     },
