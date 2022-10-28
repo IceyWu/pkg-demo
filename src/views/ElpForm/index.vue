@@ -61,6 +61,7 @@
 </template>
 
 <script setup lang="ts">
+import { ElMessage } from 'element-plus'
 import { useI18n } from 'vue-i18n'
 import { ElDivider } from 'element-plus'
 import type { FormRules } from 'element-plus'
@@ -189,14 +190,51 @@ const formItems = reactive([
 ])
 const addUserForm = [
   {
-    label: '开关',
+    label: '开关(带change hooks)',
     type: 'switch',
     value: 'switch',
     defaultValue: false,
     attribute: {
       // placeholder: t("placeholder.username"),
     },
+    hooks: {
+      change: (val: any) => {
+        console.log('switch11', val)
+        ElMessage({
+          message: val ? '开' : '关',
+          type: 'success',
+        })
+      },
+    },
     rowIndex: 10,
+  },
+  {
+    label: '文件上传',
+    type: 'upload',
+    value: 'upload',
+    defaultValue: '',
+    attribute: {
+      // placeholder: t("placeholder.username"),
+    },
+    hooks: {
+      change: (val: any) => {
+        console.log('upload', val)
+      },
+    },
+    slots: {
+      default: () => {
+        return h(
+          'button',
+          {
+            class: 'el-button el-button--primary el-button--small',
+          },
+          {
+            default: () => '点击上传',
+          }
+        )
+      },
+    },
+    rowIndex: 11,
   },
   {
     label: t('text.username'),
@@ -208,6 +246,11 @@ const addUserForm = [
       placeholder: t('placeholder.username'),
       maxlength: 20,
       clearable: true,
+    },
+    slots: {
+      append: () => {
+        return h('span', { class: 'el-icon-search' }, { default: () => 'hh' })
+      },
     },
     rowIndex: 0,
   },

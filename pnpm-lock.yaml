@@ -4,7 +4,7 @@ specifiers:
   '@intlify/vite-plugin-vue-i18n': ^6.0.3
   '@vitejs/plugin-vue': ^3.1.0
   element-plus: ^2.2.17
-  elp-form: 1.0.4
+  elp-form: ^1.0.5
   sass: ^1.55.0
   sass-loader: ^13.1.0
   typescript: ^4.6.4
@@ -18,7 +18,7 @@ specifiers:
 dependencies:
   '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@3.1.7+vue-i18n@9.2.2
   element-plus: 2.2.17_vue@3.2.40
-  elp-form: 1.0.4
+  elp-form: 1.0.5
   sass: 1.55.0
   sass-loader: 13.1.0_sass@1.55.0
   vite-svg-loader: 3.6.0
@@ -566,8 +566,8 @@ packages:
       - '@vue/composition-api'
     dev: false
 
-  /elp-form/1.0.4:
-    resolution: {integrity: sha512-befwwc2wvjZdc8RLKDSZOIyuKuw1FPdyIap+kS3bSWuLUlQvhbX3XSwBcY/SY3SNNfi2eGYPWYtudwYqP/+LpA==}
+  /elp-form/1.0.5:
+    resolution: {integrity: sha512-xGsJh/xNmzK9EZbw18uFmlddnLW9jqfyYrIuHqMAlr4GBMeX6Qt9kpOjhULPfrPU+bLxmQQoD+VJYj/IlisImg==}
     dependencies:
       element-plus: 2.2.17_vue@3.2.40
       vue: 3.2.40
